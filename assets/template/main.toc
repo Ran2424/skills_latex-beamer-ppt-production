@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{引言}{2}{0}{1}
+\beamer@sectionintoc {2}{系统分析}{3}{0}{2}
+\beamer@sectionintoc {3}{合理性分析}{6}{0}{3}
+\beamer@sectionintoc {4}{组件设计}{8}{0}{4}
+\beamer@sectionintoc {5}{总结}{10}{0}{5}

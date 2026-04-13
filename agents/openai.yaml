@@ -1,0 +1,4 @@
+interface:
+  display_name: "LaTeX Beamer PPT"
+  short_description: "制作、编译、校验结构清楚的 LaTeX Beamer 幻灯片"
+  default_prompt: "Use $latex-beamer-ppt-production to draft a page-level deck outline for user confirmation, then create or revise this Tongji Beamer deck, compile it, and verify the exported PDF."

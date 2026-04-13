@@ -1,0 +1,81 @@
+\documentclass[aspectratio=169,fontset=none]{ctexbeamer}
+
+\usepackage{amsthm}
+\usepackage[style=gb7714-2015,backend=biber]{biblatex}
+\usepackage{booktabs}
+\addbibresource{reference.bib}
+\setbeamertemplate{bibliography item}[text]
+
+
+\usetheme{tongji}
+
+% Customizations for URL and DOI fonts
+\def\UrlFont{\ttfamily}
+\DeclareFieldFormat{doi}{%
+  \sffamily{DOI}\addcolon\space
+  \ifhyperref
+    {\href{https://doi.org/#1}{\nolinkurl{#1}}}
+    {\nolinkurl{#1}}}
+
+
+%Information to be included in the title page:
+\title[这是Title]{这是title文字}
+\subtitle{这是subtitle}
+\author[夏强]{
+    2410872 城市交通博士生, \\
+}
+\institute[ 同济大学\ 交通学院\ TransportX]{
+    同济大学\ 交通学院\ TransportX
+}
+\date{\today}
+
+\setbeamercolor{titlepageblue}{fg=TWhite,bg=TJBluePrimary}
+
+\begin{document}
+
+\begin{frame}[plain]
+    \begin{beamercolorbox}[wd=\paperwidth,sep=0pt,center]{titlepageblue}
+        \vspace{0.8cm}
+        \begin{columns}[t,totalwidth=\paperwidth]
+            \begin{column}{0.55\paperwidth}
+                \includegraphics[height=2cm]{figure/logo.pdf}
+            \end{column}
+            \begin{column}{0.45\paperwidth}
+                \flushright
+                \includegraphics[height=2.2cm]{figure/logo.pdf}
+            \end{column}
+        \end{columns}
+        \vspace{1.0cm}
+        {\Huge\bfseries\inserttitle\par}
+        \vspace{0.3cm}
+        {\Large\insertsubtitle\par}
+        \vspace{1.5cm}
+    \end{beamercolorbox}
+
+    \begin{beamercolorbox}[wd=\paperwidth,sep=1em]{normal text}
+        \begin{minipage}[t]{0.68\paperwidth}
+            \setlength{\tabcolsep}{0pt}
+            \begin{tabular}{@{}ll@{}}
+                作者：& \insertauthor \\
+                期刊：& Nature Physics \\
+                单位：& 同济大学 交通学院 TransportX \\
+                发表时间：& 2010-09-12
+            \end{tabular}
+        \end{minipage}
+        \begin{minipage}[t]{0.3\paperwidth}
+            \raggedleft
+            \includegraphics[width=0.27\paperwidth]{figure/TransportX.png}\\[0.3em]
+            汇报人：夏强
+        \end{minipage}
+    \end{beamercolorbox}
+\end{frame}
+
+\input{contents/introduction}
+\input{contents/body}
+\input{contents/summary}
+
+\begin{frame}{参考文献}
+    \printbibliography
+\end{frame}
+
+\end{document}
