@@ -1,0 +1,23 @@
+% Replace assets or these hooks without editing the title/section/body masters.
+\newcommand{\TongjiCoverImageFile}{figure/tongji-cover.png}
+\newcommand{\TongjiLogoFile}{figure/branding/tongji-logo.pdf}
+\newcommand{\TongjiLogoWhiteFile}{figure/branding/tongji-logo-white.pdf}
+\newcommand{\TongjiSealFile}{figure/branding/tongji-seal.pdf}
+\newcommand{\TongjiLogo}[1][height=.64cm]{\includegraphics[#1]{\TongjiLogoFile}}
+\newcommand{\TongjiLogoWhite}[1][height=.64cm]{\includegraphics[#1]{\TongjiLogoWhiteFile}}
+\newcommand{\TongjiSeal}[1][height=.64cm]{\includegraphics[#1]{\TongjiSealFile}}
+% Four vector chips; the optional argument is the side length of each chip.
+\newcommand{\TongjiColorBars}[1][.24cm]{%
+  \begin{tikzpicture}[x=#1,y=#1]
+    \fill[TJChipGray] (0,0) rectangle (1,1);
+    \fill[TJChipBlue] (1.35,0) rectangle (2.35,1);
+    \fill[TJChipNavy] (2.70,0) rectangle (3.70,1);
+    \fill[TJChipPale] (4.05,0) rectangle (5.05,1);
+  \end{tikzpicture}%
+}
+\newcommand{\TongjiHeaderBrand}{%
+  \raisebox{-.5\height}{\TongjiColorBars}%
+  \hspace{.18cm}%
+  \raisebox{-.5\height}{\TongjiSeal}%
+}
+\newcommand{\TongjiCoverBrand}{\includegraphics[height=1.95cm]{\TongjiCoverImageFile}}

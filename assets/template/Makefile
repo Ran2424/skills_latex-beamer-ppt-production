@@ -1,9 +1,10 @@
 LATEXMK=latexmk
-LATEXMK_ARGS=-halt-on-error -time -xelatex -outdir=. -shell-escape
+LATEXMK_ARGS=-xelatex -interaction=nonstopmode -halt-on-error -outdir=build
 
-.PHONY:
+.PHONY: build clean
 build:
-	$(LATEXMK) main.tex $(LATEXMK_ARGS)
+	$(LATEXMK) $(LATEXMK_ARGS) main.tex
+	cp build/main.pdf main.pdf
 
 clean:
-	$(LATEXMK) -c
+	$(LATEXMK) -outdir=build -c main.tex

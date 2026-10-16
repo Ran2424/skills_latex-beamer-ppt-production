@@ -5,3 +5,5 @@ $biber = 'biber %O %B';
 $ENV{'TZ'}='Asia/Shanghai';
 
 $clean_ext = 'bbl glo gls hd loa nav snm run.xml thm xdv';
+
+$xdvipdfmx = 'xdvipdfmx -V 7 %O -o %D %S';

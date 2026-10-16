@@ -1,0 +1,33 @@
+% Optional conclusion strip, then title, visible message, body, and source.
+\newcommand{\reviewslide}[5][]{%
+  \begingroup
+  \usebackgroundtemplate{}%
+  \def\reviewbottomspace{}%
+  \ifstrempty{#1}{}{%
+    \def\reviewbottomspace{\vspace{6mm}}%
+    \usebackgroundtemplate{%
+      \begin{tikzpicture}[remember picture,overlay]
+        \fill[TJBluePrimary!10]
+          ([yshift=.23cm]current page.south west) rectangle
+          ([yshift=.82cm]current page.south east);
+        \node[text=TJBluePrimary,text width=14.6cm,align=center,
+          font=\fontsize{10.4}{13}\selectfont\bfseries]
+          at ([yshift=.525cm]current page.south) {#1};
+      \end{tikzpicture}%
+    }%
+  }%
+  \begin{frame}[t]{#2}
+    \vspace{0mm}% Keep the following message out of Beamer's subtitle parser.
+    {\fontsize{11.3}{14.2}\selectfont\bfseries\raggedright #3\par}
+    \vspace{3mm}#4
+    \vfill{\fontsize{8.2}{10}\selectfont\color{Muted}\raggedright #5\par}
+    \reviewbottomspace
+    \note{\reviewnotes}
+  \end{frame}%
+  \endgroup
+  \gdef\reviewnotes{}%
+}
+\def\reviewnotes{}
+\newcommand{\talknote}[1]{\gdef\reviewnotes{#1}}
+% Displayed source text must identify the same work as the bibliography key.
+\newcommand{\sourcelist}[2]{#2\cite{#1}}

@@ -15,17 +15,23 @@
 %
 % This work consists of all the *.tex and *.sty files in
 %   https://github.com/TJ-CSCCG/Tongji-Beamer
-\setbeamerfont{title}{size = \huge}
-\setbeamerfont{frametitle}{size = \Large}
 
+% Prefer the reference deck's macOS fonts; use TeX Live fonts when unavailable.
 \usepackage{fontspec}
 \usepackage{unicode-math}
-
-\setmainfont{Helvetica Neue}
-\setsansfont{Helvetica Neue}
-\setmonofont{Menlo}
-\setmathfont{STIX Two Math}
-
-\setCJKmainfont{Songti.ttc}[Path=/System/Library/Fonts/Supplemental/]
-\setCJKsansfont{Songti.ttc}[Path=/System/Library/Fonts/Supplemental/]
-\setCJKmonofont{Arial Unicode MS}
+\IfFontExistsTF{Helvetica Neue}{
+  \setmainfont{Helvetica Neue}\setsansfont{Helvetica Neue}
+}{\setmainfont{TeX Gyre Heros}\setsansfont{TeX Gyre Heros}}
+\IfFontExistsTF{Menlo}{\setmonofont{Menlo}}{\setmonofont{Latin Modern Mono}}
+\IfFontExistsTF{STIX Two Math}{\setmathfont{STIX Two Math}}{\setmathfont{Latin Modern Math}}
+\IfFileExists{/System/Library/Fonts/Supplemental/Songti.ttc}{
+  \setCJKmainfont{Songti.ttc}[Path=/System/Library/Fonts/Supplemental/]
+}{\setCJKmainfont{FandolSong-Regular}[BoldFont=FandolSong-Bold]}
+\IfFontExistsTF{PingFang SC}{\setCJKsansfont{PingFang SC}}{
+  \setCJKsansfont{FandolHei-Regular}[BoldFont=FandolHei-Bold]
+}
+\IfFontExistsTF{Arial Unicode MS}{\setCJKmonofont{Arial Unicode MS}}{
+  \setCJKmonofont{FandolFang-Regular}
+}
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{frametitle}{size=\Large}

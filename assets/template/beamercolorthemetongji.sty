@@ -20,7 +20,7 @@
 \usecolortheme{whale}
 \usecolortheme{orchid}
 
-\definecolor{TJBluePrimary}{HTML}{2F5597}
+\definecolor{TJBluePrimary}{HTML}{365F9F}
 \definecolor{TJBlueSecondary}{HTML}{002060}
 \definecolor{TJRed}{RGB}{250, 2, 1}
 \definecolor{TBlack}{RGB}{0, 0, 0}
@@ -28,7 +28,7 @@
 
 % "bg=" make it transparent
 \setbeamercolor{title}{fg=TJBluePrimary, bg=}
-\setbeamercolor{frametitle}{fg=TJBluePrimary}
+\setbeamercolor{frametitle}{fg=black}
 \setbeamercolor{caption name}{fg=TJBluePrimary}
 \setbeamercolor{structure}{fg=TJBluePrimary}
 \setbeamercolor{item}{fg=TJBluePrimary}
@@ -51,3 +51,23 @@
 \setbeamercolor{bibliography entry title}{fg=black}
 \setbeamercolor{bibliography entry location}{fg=black}
 \setbeamercolor{bibliography entry note}{fg=black}
+
+% Shared neutral text and agenda highlight; diagram semantics belong to each deck.
+\definecolor{Ink}{HTML}{33404B}
+\definecolor{Muted}{HTML}{66717C}
+\definecolor{TJAgendaActive}{RGB}{204,0,0}
+\setbeamercolor{normal text}{fg=Ink,bg=white}
+
+% Opaque equivalents of the original corner chips composited on white.
+\definecolor{TJChipGray}{HTML}{4B4B4B}
+\definecolor{TJChipBlue}{HTML}{0070C0}
+\definecolor{TJChipNavy}{HTML}{334D80}
+\definecolor{TJChipPale}{HTML}{82ACD3}
+
+% Optional hierarchy colors; these aliases do not recolor the master automatically.
+\colorlet{TJLevelText}{TJChipGray}
+\colorlet{TJLevelSecondary}{TJChipBlue}
+\colorlet{TJLevelPrimary}{TJChipNavy}
+\colorlet{TJLevelSoft}{TJChipPale}
+% Additional emphasis color; the four-chip identity keeps its original colors.
+\definecolor{TJOptionalRed}{HTML}{C43C39}

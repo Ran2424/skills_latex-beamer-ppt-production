@@ -1,0 +1,22 @@
+\reviewslide{备用：颜色样式与层级选择}{四色对应不同信息层级，红色可用于强调关键信息。}{
+  \footnotesize\renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\linewidth}{@{}p{.7cm}p{3.7cm}p{3.8cm}X@{}}
+    \toprule
+    色样 & 名称与调用 & Hex / RGB & 建议用途 \\
+    \midrule
+    \textcolor{TJLevelText}{\rule{.65cm}{.28cm}} & 深灰 / 正文说明\newline\texttt{TJLevelText}
+      & \texttt{\#4B4B4B}\newline 75, 75, 75 & 正文、说明与中性信息 \\
+    \textcolor{TJLevelSecondary}{\rule{.65cm}{.28cm}} & 蓝色 / 次级强调\newline\texttt{TJLevelSecondary}
+      & \texttt{\#0070C0}\newline 0, 112, 192 & 二级标题、分组与局部强调 \\
+    \textcolor{TJLevelPrimary}{\rule{.65cm}{.28cm}} & 深蓝 / 主要层级\newline\texttt{TJLevelPrimary}
+      & \texttt{\#334D80}\newline 51, 77, 128 & 一级标题、关键结构与主要判断 \\
+    \textcolor{TJLevelSoft}{\rule{.65cm}{.28cm}} & 浅蓝 / 辅助层级\newline\texttt{TJLevelSoft}
+      & \texttt{\#82ACD3}\newline 130, 172, 211 & 辅助标记、边框与浅底信息区 \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{3mm}\par
+  \textcolor{TJOptionalRed}{\rule{.65cm}{.28cm}}\hspace{2mm}
+  \textbf{红色 / 强调色}\quad\texttt{TJOptionalRed}\quad\texttt{\#C43C39}\quad RGB 196, 60, 57\par
+  \vspace{1mm}
+  {\fontsize{8.5}{11}\selectfont 红色可与加粗配合，突出\textcolor{TJOptionalRed}{\textbf{重点词语}}或\textcolor{TJOptionalRed}{\textbf{关键句子}}。}
+}{按信息层级选择颜色；浅蓝适用于辅助标记、边框与浅底信息区。}

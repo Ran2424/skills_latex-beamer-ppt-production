@@ -15,54 +15,29 @@
 %
 % This work consists of all the *.tex and *.sty files in
 %   https://github.com/TJ-CSCCG/Tongji-Beamer
-\useoutertheme[subsection=false]{miniframes}
 
-% footline command
-\newcommand{\Ffootline}{
-    % footline 左边部分
-    \insertsection
-    \hfill
-    % footline 中间部分
-    \textit{Tongji UNiv.}
-    \hfill
-    % footline 右边部分
-    \insertframenumber/\inserttotalframenumber
+% Local presentation adaptation, 2026-10-15: user-provided PowerPoint reference.
+\setbeamertemplate{headline}{}
+\setbeamertemplate{navigation symbols}{}
+\usebackgroundtemplate{}
+\setbeamertemplate{frametitle}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[black!48] ([xshift=.69cm,yshift=-.58cm]current page.north west)
+      rectangle ++(.14cm,-.54cm);
+    \node[anchor=west,text=black,font=\fontsize{17}{21}\selectfont\bfseries]
+      at ([xshift=.94cm,yshift=-.85cm]current page.north west) {\insertframetitle};
+    \draw[black!48,line width=.3pt]
+      ([xshift=.69cm,yshift=-1.27cm]current page.north west)
+      --([xshift=11.38cm,yshift=-1.27cm]current page.north west);
+    \node[anchor=north east,inner sep=0pt]
+      at ([xshift=-.45cm,yshift=-.62cm]current page.north east)
+      {\TongjiHeaderBrand};
+  \end{tikzpicture}%
+  \vspace*{.80cm}%
 }
-
-
-% cover page
-\setbeamertemplate{title page}[default]
-
-
-% frametitle
-\setbeamertemplate{frametitle}{
-    \vspace*{4mm}
-    \hspace*{-2mm}
-    \insertframetitle
-}
-
-
-% use default headline
-
-
-% footline
-\defbeamertemplate*{footline}{tongji}{
-    \begin{beamercolorbox}{upper separation line foot}
-    \end{beamercolorbox}
-
-    \begin{beamercolorbox}[ht=2.5ex, dp=1.125ex, leftskip=.3cm, rightskip=.3cm plus1fil]{author in head/foot}
-        \leavevmode{\insertshorttitle}
-        \hfill
-        \leavevmode{第\insertsectionnumber{} / \inserttotalsections{} 部分}
-        \hfill
-        \leavevmode{\insertshortauthor}
-    \end{beamercolorbox}
-}
-
-
-% background
-\usepackage{tikz}
-\usebackgroundtemplate{%
-\tikz[overlay,remember picture] \node[opacity=.15, at=(current page.center)] {
-   \includegraphics[height=.55\paperheight]{figure/logo.pdf}};
+\setbeamertemplate{footline}{%
+  \hfill{\fontsize{6.8}{8}\selectfont\color{black!45}%
+  \ifbeamer@inappendix A\insertframenumberinappendix
+  \else\insertframenumber/\insertmainframenumber\fi}%
+  \hspace*{.35cm}\vspace*{1.1mm}%
 }

@@ -1,0 +1,35 @@
+% Appendix sections do not create main-report agenda pages.
+\section{补充材料}
+\reviewslide{备用：公式与符号需要共同解释}{归一化权重示例展示公式、符号与适用条件。}{
+  \begin{equation*}
+    w_i=\frac{x_i}{\sum_{j=1}^{n}x_j},\qquad
+    x_i\geq 0,\quad \sum_{j=1}^{n}x_j>0
+  \end{equation*}
+  \vspace{3mm}
+  \begin{itemize}
+    \setlength{\itemsep}{3mm}
+    \item $x_i$：第 $i$ 项非负输入。
+    \item $w_i$：归一化后的权重，满足 $\sum_i w_i=1$。
+    \item 分母为正是该表达式的使用条件。
+  \end{itemize}
+}{数学排版示例：归一化权重及其使用条件。}
+
+\reviewslide{备用：校徽与四色条可以独立插入}{独立校徽、四色条和页眉组合分别提供插入命令，封面沿用原图。}{
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.30\textwidth}
+      {\small\bfseries 独立矢量校徽}\par\vspace{5mm}
+      \TongjiSeal[height=1.6cm]\par\vspace{4mm}
+      {\footnotesize\texttt{\textbackslash TongjiSeal}}
+    \end{column}
+    \begin{column}{.30\textwidth}
+      {\small\bfseries 自绘四色条}\par\vspace{11mm}
+      \TongjiColorBars[.35cm]\par\vspace{9mm}
+      {\footnotesize\texttt{\textbackslash TongjiColorBars}}
+    \end{column}
+    \begin{column}{.30\textwidth}
+      {\small\bfseries 正文页眉组合}\par\vspace{9mm}
+      \TongjiHeaderBrand\par\vspace{9mm}
+      {\footnotesize\texttt{\textbackslash TongjiHeaderBrand}}
+    \end{column}
+  \end{columns}
+}{资源：原工程矢量校徽与 TikZ 四色条。}
