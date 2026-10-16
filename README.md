@@ -24,10 +24,18 @@
 
 ## 安装与调用
 
-将本仓库放入 `~/.codex/skills/latex-beamer-ppt-production`，也可从仓库克隆：
+将本仓库放入用户级通用目录 `~/.agents/skills/latex-beamer-ppt-production`，也可从仓库克隆：
 
 ```bash
-git clone https://github.com/Ran2424/latex-beamer-ppt-production.git ~/.codex/skills/latex-beamer-ppt-production
+mkdir -p ~/.agents/skills
+git clone https://github.com/Ran2424/latex-beamer-ppt-production.git ~/.agents/skills/latex-beamer-ppt-production
+```
+
+需要兼容原有 Codex 路径时，可在旧路径不存在的情况下创建符号链接，共用同一份文件：
+
+```bash
+mkdir -p ~/.codex/skills
+ln -s ~/.agents/skills/latex-beamer-ppt-production ~/.codex/skills/latex-beamer-ppt-production
 ```
 
 调用 `$latex-beamer-ppt-production`，提供主题、听众、时长及材料。
