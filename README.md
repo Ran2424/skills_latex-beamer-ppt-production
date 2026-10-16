@@ -8,7 +8,7 @@
 
 ### 12页总览
 
-![同济 Beamer 模板前12页总览](docs/previews/overview.png)
+![同济 Beamer 模板前12页总览](docs/previews/overview-12-pages.png)
 
 ### 封面
 
